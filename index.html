@@ -1,111 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mosiah James | AI-Native Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mosiah James | AI-Native Developer Portfolio</title>
+<meta name="description" content="Mosiah James — AI-native software developer with a hands-on construction background.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1628; --navy-2:#0E1D33; --line:#1C3352;
+    --blue:#3FA7D6; --blue-dim:rgba(63,167,214,0.18);
+    --white:#F4F7FA; --dim:#8CA0B8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;line-height:1.6;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  a{color:inherit;text-decoration:none;}
 
-    <link rel="stylesheet" href="style.css" />
+  header{position:sticky;top:0;z-index:20;background:rgba(10,22,40,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .logo{display:flex;align-items:center;gap:12px;}
+  .logo .mark{width:38px;height:38px;border:1px solid var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:13px;color:var(--blue);}
+  .logo .name{font-family:'Space Grotesk';font-weight:700;font-size:15px;letter-spacing:0.03em;}
+  .logo .role{font-family:'JetBrains Mono';font-size:10px;color:var(--dim);letter-spacing:0.08em;}
+  nav{display:flex;gap:28px;}
+  nav a{font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--dim);transition:color .2s;}
+  nav a:hover, nav a.active{color:var(--blue);}
+
+  /* HERO */
+  .hero{padding:80px 0 60px;border-bottom:1px solid var(--line);}
+  .hero .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;}
+  @media(max-width:900px){.hero .grid{grid-template-columns:1fr;}}
+  .eyebrow{font-family:'JetBrains Mono';font-size:11px;color:var(--blue);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+  .eyebrow::after{content:'';flex:1;height:1px;background:var(--line);max-width:120px;}
+  h1{font-family:'Space Grotesk';font-weight:700;font-size:clamp(34px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;}
+  .role-line{margin-top:22px;font-size:18px;color:var(--dim);}
+  .role-line b{color:var(--white);font-weight:600;}
+  .ctas{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{font-family:'JetBrains Mono';font-size:12px;letter-spacing:0.05em;text-transform:uppercase;padding:14px 24px;display:inline-flex;align-items:center;gap:8px;transition:opacity .2s;}
+  .btn-primary{background:var(--blue);color:var(--navy);}
+  .btn-outline{border:1px solid var(--line);color:var(--white);}
+  .btn:hover{opacity:0.82;}
+  .scale-note{margin-top:28px;font-family:'JetBrains Mono';font-size:10px;color:var(--dim);letter-spacing:0.08em;}
+
+  .blueprint-art{border:1px solid var(--line);background:
+    linear-gradient(var(--blue-dim) 1px, transparent 1px) 0 0/24px 24px,
+    linear-gradient(90deg, var(--blue-dim) 1px, transparent 1px) 0 0/24px 24px,
+    var(--navy-2);
+    padding:24px;aspect-ratio:1/1;}
+
+  /* ABOUT */
+  .about{padding:70px 0;border-bottom:1px solid var(--line);}
+  .about .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  @media(max-width:900px){.about .grid{grid-template-columns:1fr;}}
+  .kicker{font-family:'JetBrains Mono';font-size:11px;color:var(--blue);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px;}
+  .about h2{font-family:'Space Grotesk';font-size:28px;font-weight:600;line-height:1.25;}
+  .about h2 em{font-style:normal;color:var(--blue);}
+  .about p{margin-top:16px;color:var(--dim);max-width:480px;}
+  .traits{display:flex;flex-direction:column;gap:22px;}
+  .trait{display:flex;gap:16px;}
+  .trait .ico{width:40px;height:40px;border:1px solid var(--line);flex:none;display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'JetBrains Mono';font-size:13px;}
+  .trait h4{font-family:'Space Grotesk';font-size:14px;letter-spacing:0.04em;text-transform:uppercase;}
+  .trait p{margin-top:4px;font-size:14px;color:var(--dim);}
+
+  /* JOURNEY */
+  .journey{padding:60px 0;border-bottom:1px solid var(--line);}
+  .journey-track{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;margin-top:32px;}
+  .journey-track::before{content:'';position:absolute;top:19px;left:0;right:0;height:1px;background:var(--line);}
+  @media(max-width:900px){.journey-track{grid-template-columns:repeat(3,1fr);row-gap:36px;}.journey-track::before{display:none;}}
+  .jstep{text-align:center;position:relative;padding:0 8px;}
+  .jstep .num{width:40px;height:40px;border-radius:50%;background:var(--navy);border:1px solid var(--blue);color:var(--blue);font-family:'JetBrains Mono';font-size:13px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;position:relative;z-index:1;}
+  .jstep h5{font-family:'Space Grotesk';font-size:12px;letter-spacing:0.04em;text-transform:uppercase;}
+  .jstep p{margin-top:6px;font-size:12px;color:var(--dim);}
+
+  /* SKILLS */
+  .skills{padding:60px 0;border-bottom:1px solid var(--line);}
+  .tabs{display:flex;gap:24px;border-bottom:1px solid var(--line);margin-bottom:28px;}
+  .tab{font-family:'JetBrains Mono';font-size:12px;letter-spacing:0.05em;text-transform:uppercase;padding-bottom:14px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;}
+  .tab.active{color:var(--blue);border-color:var(--blue);}
+  .skill-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
+  @media(max-width:700px){.skill-grid{grid-template-columns:repeat(3,1fr);}}
+  .skill-panel{display:none;}
+  .skill-panel.show{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
+  @media(max-width:700px){.skill-panel.show{grid-template-columns:repeat(3,1fr);}}
+  .skill-item{border:1px solid var(--line);padding:20px 10px;text-align:center;font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.03em;color:var(--dim);}
+
+  /* PROJECTS */
+  .projects{padding:60px 0;border-bottom:1px solid var(--line);}
+  .proj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px;}
+  @media(max-width:900px){.proj-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.proj-grid{grid-template-columns:1fr;}}
+  .card{border:1px solid var(--line);}
+  .card .thumb{aspect-ratio:4/3;background:var(--navy-2);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Space Grotesk';font-size:22px;font-weight:700;border-bottom:1px solid var(--line);}
+  .card .body{padding:16px;}
+  .card h5{font-family:'Space Grotesk';font-size:14px;margin-bottom:6px;}
+  .card p{font-size:12.5px;color:var(--dim);}
+  .card .tags{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;}
+  .card .tags span{font-family:'JetBrains Mono';font-size:9px;color:var(--blue);border:1px solid var(--line);padding:3px 7px;}
+
+  /* CERTS */
+  .certs{padding:50px 0;border-bottom:1px solid var(--line);}
+  .cert-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px;}
+  .cert{border:1px solid var(--line);padding:16px 20px;display:flex;align-items:center;gap:12px;flex:1;min-width:180px;}
+  .cert .ico{color:var(--blue);font-family:'JetBrains Mono';font-size:14px;}
+  .cert h6{font-family:'Space Grotesk';font-size:13px;}
+  .cert p{font-size:11px;color:var(--dim);}
+
+  /* CONTACT */
+  .contact{padding:60px 0;}
+  .contact-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px;}
+  @media(max-width:700px){.contact-row{grid-template-columns:repeat(2,1fr);}}
+  .contact-item{border:1px solid var(--line);padding:18px;display:flex;align-items:center;gap:12px;transition:border-color .2s;}
+  .contact-item:hover{border-color:var(--blue);}
+  .contact-item .ico{color:var(--blue);font-family:'JetBrains Mono';font-size:16px;}
+  .contact-item h6{font-family:'JetBrains Mono';font-size:11px;text-transform:uppercase;letter-spacing:0.05em;}
+  .contact-item p{font-size:12px;color:var(--dim);margin-top:2px;word-break:break-word;}
+
+  footer{border-top:1px solid var(--line);padding:24px 0;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  footer p{font-family:'JetBrains Mono';font-size:11px;color:var(--dim);}
+</style>
 </head>
 <body>
 
+<header>
+  <div class="wrap">
+    <div class="logo">
+      <div class="mark">MJ</div>
+      <div>
+        <div class="name">MOSIAH JAMES</div>
+        <div class="role">AI-NATIVE DEVELOPER</div>
+      </div>
+    </div>
     <nav>
-        <div>MJ</div>
-
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#journey">Journey</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#journey">Journey</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
     </nav>
+  </div>
+</header>
 
-    <main>
+<section class="hero" id="home">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Drawing A-101</div>
+      <h1>Building the Future,<br>One Blueprint at a Time.</h1>
+      <p class="role-line"><b>AI-Native Software Developer</b><br>Builder &middot; Problem Solver &middot; Lifelong Learner</p>
+      <div class="ctas">
+        <a href="#projects" class="btn btn-primary">&rarr; View Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+      <div class="scale-note">SCALE 1:100</div>
+    </div>
+    <div class="blueprint-art">
+      <svg viewBox="0 0 400 400" width="100%" height="100%">
+        <g stroke="#3FA7D6" stroke-width="1.2" fill="none" opacity="0.9">
+          <rect x="60" y="120" width="200" height="200"/>
+          <rect x="60" y="80" width="120" height="40"/>
+          <line x1="60" y1="160" x2="260" y2="160"/>
+          <line x1="60" y1="220" x2="260" y2="220"/>
+          <line x1="120" y1="120" x2="120" y2="320"/>
+          <line x1="200" y1="120" x2="200" y2="320"/>
+          <path d="M60 120 L160 60 L260 120" />
+          <rect x="140" y="260" width="40" height="60"/>
+        </g>
+        <g stroke="#8CA0B8" stroke-width="0.6" fill="none">
+          <line x1="60" y1="345" x2="260" y2="345"/>
+          <line x1="60" y1="340" x2="60" y2="350"/>
+          <line x1="260" y1="340" x2="260" y2="350"/>
+        </g>
+        <text x="130" y="360" fill="#8CA0B8" font-family="JetBrains Mono" font-size="9">30'-0"</text>
+        <circle cx="230" cy="270" r="9" fill="none" stroke="#3FA7D6" stroke-width="1.2"/>
+        <circle cx="230" cy="285" r="14" fill="none" stroke="#3FA7D6" stroke-width="1.2"/>
+        <line x1="230" y1="299" x2="230" y2="330" stroke="#3FA7D6" stroke-width="1.2"/>
+      </svg>
+    </div>
+  </div>
+</section>
 
-        <section id="hero">
-            <p>DRAWING A-101</p>
+<section class="about" id="about">
+  <div class="wrap grid">
+    <div>
+      <div class="kicker">01 — About Me</div>
+      <h2>I've always been a builder.<br><em>I simply changed what I build.</em></h2>
+      <p>Before code, I framed houses. Now I architect solutions. My background in construction taught me discipline, precision, and how to solve real problems under pressure. Today, I use those same principles to build clean, scalable, AI-powered applications that make an impact.</p>
+      <p>AI doesn't replace engineers. It amplifies builders. I build with intention. I ship with purpose.</p>
+    </div>
+    <div class="traits">
+      <div class="trait"><div class="ico">01</div><div><h4>Critical Thinking</h4><p>I navigate hard decisions with logic and clarity.</p></div></div>
+      <div class="trait"><div class="ico">02</div><div><h4>Time Management</h4><p>I plan, prioritize, and deliver on what matters.</p></div></div>
+      <div class="trait"><div class="ico">03</div><div><h4>Communication</h4><p>I make ideas clear and teams stronger.</p></div></div>
+      <div class="trait"><div class="ico">04</div><div><h4>Adaptability</h4><p>I learn fast and thrive in change.</p></div></div>
+    </div>
+  </div>
+</section>
 
-            <h1>Building the Future, One Blueprint at a Time.</h1>
+<section class="journey" id="journey">
+  <div class="wrap">
+    <div class="kicker">02 — Blueprint Journey</div>
+    <div class="journey-track">
+      <div class="jstep"><div class="num">1</div><h5>Construction</h5><p>Built houses from the ground up.</p></div>
+      <div class="jstep"><div class="num">2</div><h5>Learning HTML</h5><p>Started building on the web.</p></div>
+      <div class="jstep"><div class="num">3</div><h5>CSS</h5><p>Designed and styled interfaces.</p></div>
+      <div class="jstep"><div class="num">4</div><h5>JavaScript</h5><p>Added interactivity and logic.</p></div>
+      <div class="jstep"><div class="num">5</div><h5>AI Development</h5><p>Leveraging AI to build smarter.</p></div>
+      <div class="jstep"><div class="num">6</div><h5>Future Engineer</h5><p>Continuing to build the future.</p></div>
+    </div>
+  </div>
+</section>
 
-            <p>
-                AI-Native Software Developer • Builder • Problem Solver
-            </p>
+<section class="skills" id="skills">
+  <div class="wrap">
+    <div class="kicker">03 — Skills</div>
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('frontend', this)">Frontend</div>
+      <div class="tab" onclick="showTab('aitools', this)">AI &amp; Tools</div>
+      <div class="tab" onclick="showTab('soft', this)">Soft Skills</div>
+    </div>
+    <div class="skill-panel show" id="frontend">
+      <div class="skill-item">HTML</div>
+      <div class="skill-item">CSS</div>
+      <div class="skill-item">JavaScript</div>
+      <div class="skill-item">Responsive Design</div>
+    </div>
+    <div class="skill-panel" id="aitools">
+      <div class="skill-item">Git</div>
+      <div class="skill-item">GitHub</div>
+      <div class="skill-item">VS Code</div>
+      <div class="skill-item">Prompt Engineering</div>
+      <div class="skill-item">AI-Assisted Dev</div>
+    </div>
+    <div class="skill-panel" id="soft">
+      <div class="skill-item">Critical Thinking</div>
+      <div class="skill-item">Time Management</div>
+      <div class="skill-item">Communication</div>
+      <div class="skill-item">Adaptability</div>
+    </div>
+  </div>
+</section>
 
-            <button>View My Work</button>
-            <button>Download Resume</button>
-        </section>
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="kicker">04 — Featured Projects</div>
+    <div class="proj-grid">
+      <div class="card">
+        <div class="thumb">MJ</div>
+        <div class="body">
+          <h5>AI Portfolio Website</h5>
+          <p>Personal portfolio built with HTML, CSS, JavaScript, and AI-assisted workflows.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb">☀</div>
+        <div class="body">
+          <h5>Weather Dashboard</h5>
+          <p>Real-time weather app with search, forecasts, and responsive design.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span><span>API</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb">◧</div>
+        <div class="body">
+          <h5>AI Chat App</h5>
+          <p>Conversational AI interface with a modern UI and streaming responses.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb">◇</div>
+        <div class="body">
+          <h5>Future SaaS Project</h5>
+          <p>Top secret for now. Building something powerful with AI at the core.</p>
+          <div class="tags"><span>Coming Soon</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <section id="about">
-            <h2>The Builder's Blueprint</h2>
+<section class="certs" id="certs">
+  <div class="wrap">
+    <div class="kicker">05 — Certifications</div>
+    <div class="cert-row">
+      <div class="cert"><div class="ico">✓</div><div><h6>OSHA 30</h6><p>Certified</p></div></div>
+      <div class="cert"><div class="ico">✓</div><div><h6>SST 10</h6><p>Certified</p></div></div>
+      <div class="cert"><div class="ico">✓</div><div><h6>Flagger</h6><p>Certified</p></div></div>
+      <div class="cert"><div class="ico">✓</div><div><h6>4-Hour Scaffolding</h6><p>Certified</p></div></div>
+      <div class="cert"><div class="ico">✓</div><div><h6>Food Handler</h6><p>Certified</p></div></div>
+    </div>
+  </div>
+</section>
 
-            <p>
-                I've always been a builder. Before software, I helped build
-                houses from the ground up. Today I bring that same mindset
-                into modern web development and AI-assisted workflows.
-            </p>
-        </section>
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="kicker">06 — Let's Build Something Great</div>
+    <div class="contact-row">
+      <a class="contact-item" href="mailto:mosiah.james@pursuit.org">
+        <div class="ico">@</div>
+        <div><h6>Email</h6><p>mosiah.james@pursuit.org</p></div>
+      </a>
+      <a class="contact-item" href="https://github.com/mosiahjames-ui" target="_blank" rel="noopener">
+        <div class="ico">&lt;/&gt;</div>
+        <div><h6>GitHub</h6><p>github.com/mosiahjames-ui</p></div>
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/mosiah-james-16b653421" target="_blank" rel="noopener">
+        <div class="ico">in</div>
+        <div><h6>LinkedIn</h6><p>linkedin.com/in/mosiah-james</p></div>
+      </a>
+      <a class="contact-item" href="#">
+        <div class="ico">&darr;</div>
+        <div><h6>Download Resume</h6><p>PDF</p></div>
+      </a>
+    </div>
+  </div>
+</section>
 
-        <section id="journey">
-            <h2>Blueprint Journey</h2>
+<footer>
+  <div class="wrap">
+    <div class="logo">
+      <div class="mark">MJ</div>
+      <div><div class="name" style="font-size:13px;">MOSIAH JAMES</div><div class="role">AI-NATIVE SOFTWARE DEVELOPER</div></div>
+    </div>
+    <p>&copy; 2026 Mosiah James. Built with code. Designed with purpose.</p>
+  </div>
+</footer>
 
-            <ul>
-                <li>Construction</li>
-                <li>Learning HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>AI Development</li>
-                <li>Future Software Engineer</li>
-            </ul>
-        </section>
+<script>
+function showTab(id, el){
+  document.querySelectorAll('.skill-panel').forEach(p=>p.classList.remove('show'));
+  document.getElementById(id).classList.add('show');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
 
-        <section id="skills">
-            <h2>Skills</h2>
-
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Git</li>
-                <li>GitHub</li>
-                <li>Prompt Engineering</li>
-            </ul>
-        </section>
-
-        <section id="projects">
-            <h2>Things I've Built</h2>
-
-            <article>
-                <h3>AI Portfolio Website</h3>
-                <p>Blueprint-inspired personal portfolio.</p>
-            </article>
-
-            <article>
-                <h3>Weather Dashboard</h3>
-                <p>Responsive weather application using JavaScript.</p>
-            </article>
-
-            <article>
-                <h3>AI Chat App</h3>
-                <p>Conversational interface inspired by modern AI tools.</p>
-            </article>
-        </section>
-
-        <section id="contact">
-            <h2>Let's Build Something Great Together</h2>
-
-            <p>mosiah.james@pursuit.org
-            </p>
-            <a href="https://www.linkedin.com/in/mosiah-james-16b653421" target="_blank">LinkedIn</a> 
-        </section>
-
-    </main>
-
-    <footer>
-        <p>© 2026 Mosiah James</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
