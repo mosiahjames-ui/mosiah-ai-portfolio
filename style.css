@@ -53,51 +53,46 @@ section,
 footer {
     width: 100%;
 }
-/* ===========================
-   HERO NAME + TAGLINE
+* ===========================
+   TYPOGRAPHY - READABILITY UPDATE
 =========================== */
 
 section h2 {
     font-family: "Space Grotesk", sans-serif;
-    font-size: clamp(2.5rem, 5vw, 3.75rem);
-    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
     color: #ffffff;
-    margin-bottom: 1rem;
-    letter-spacing: -1px;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 
 section h3 {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.35rem;
+    font-weight: 600;
     color: #ffffff;
     margin-bottom: 0.75rem;
 }
 
 section p {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.15rem;
+    line-height: 1.9;
     color: var(--muted);
+    max-width: 65ch; /* limits line length for easier reading */
 }
 
 nav a {
     font-size: 1rem;
     font-weight: 600;
 }
+
 .hero-name {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: clamp(3.5rem, 8vw, 5.5rem);
-    font-weight: 900;
-    line-height: 0.95;
-    letter-spacing: -2px;
-    color: #ffffff;
+    font-size: clamp(3rem, 6vw, 4.5rem);
 }
+
 .hero-tagline {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    color: var(--primary-light);
-    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
 }
 
 /* ===========================
