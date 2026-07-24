@@ -6,7 +6,6 @@
 
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -44,12 +43,91 @@ body {
    LAYOUT
 =========================== */
 
-section,
-nav,
-footer {
-
+.wrap {
     width: min(1100px, 90%);
-
     margin: 0 auto;
+}
 
+nav,
+section,
+footer {
+    width: 100%;
+}
+/* ===========================
+   HERO NAME + TAGLINE
+=========================== */
+
+section h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+section h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+nav a {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.hero-name {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    color: #ffffff;
+}
+.hero-tagline {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--primary-light);
+    margin-bottom: 1rem;
+}
+
+/* ===========================
+   HERO PHOTO
+=========================== */
+/* ===========================
+   HERO LAYOUT
+=========================== */
+
+.hero {
+    padding: 40px 0 60px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+.hero-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-photo img {
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid var(--blue);
+    box-shadow: 0 20px 40px rgba(0,0,0,.35);
 }

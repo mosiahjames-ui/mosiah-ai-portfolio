@@ -19,6 +19,8 @@
   .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
   a{color:inherit;text-decoration:none;}
 
+  .side-label{position:fixed;left:16px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:'JetBrains Mono';font-size:10px;letter-spacing:0.15em;color:var(--dim);z-index:5;display:none;}
+  @media(min-width:1300px){.side-label{display:block;}}
   header{position:sticky;top:0;z-index:20;background:rgba(10,22,40,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
   header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;}
   .logo{display:flex;align-items:center;gap:12px;}
@@ -85,7 +87,8 @@
   .skill-panel{display:none;}
   .skill-panel.show{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
   @media(max-width:700px){.skill-panel.show{grid-template-columns:repeat(3,1fr);}}
-  .skill-item{border:1px solid var(--line);padding:20px 10px;text-align:center;font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.03em;color:var(--dim);}
+  .skill-item{border:1px solid var(--line);padding:22px 10px;text-align:center;font-family:'Space Grotesk';font-size:12px;letter-spacing:0.01em;color:var(--white);display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .skill-item .badge{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono';font-weight:700;font-size:14px;color:var(--navy);}
 
   /* PROJECTS */
   .projects{padding:60px 0;border-bottom:1px solid var(--line);}
@@ -104,7 +107,7 @@
   .certs{padding:50px 0;border-bottom:1px solid var(--line);}
   .cert-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px;}
   .cert{border:1px solid var(--line);padding:16px 20px;display:flex;align-items:center;gap:12px;flex:1;min-width:180px;}
-  .cert .ico{color:var(--blue);font-family:'JetBrains Mono';font-size:14px;}
+  .cert .ico{width:32px;height:32px;border-radius:50%;background:var(--blue-dim);color:var(--blue);font-family:'JetBrains Mono';font-size:13px;display:flex;align-items:center;justify-content:center;flex:none;}
   .cert h6{font-family:'Space Grotesk';font-size:13px;}
   .cert p{font-size:11px;color:var(--dim);}
 
@@ -121,9 +124,23 @@
   footer{border-top:1px solid var(--line);padding:24px 0;}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
   footer p{font-family:'JetBrains Mono';font-size:11px;color:var(--dim);}
+.hero-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-photo img {
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
 </style>
 </head>
 <body>
+<div class="side-label">AI DEVELOPER PORTFOLIO</div>
 
 <header>
   <div class="wrap">
@@ -145,43 +162,36 @@
     </nav>
   </div>
 </header>
-
 <section class="hero" id="home">
-  <div class="wrap grid">
-    <div>
-      <div class="eyebrow">Drawing A-101</div>
-      <h1>Building the Future,<br>One Blueprint at a Time.</h1>
-      <p class="role-line"><b>AI-Native Software Developer</b><br>Builder &middot; Problem Solver &middot; Lifelong Learner</p>
-      <div class="ctas">
-        <a href="#projects" class="btn btn-primary">&rarr; View Projects</a>
-        <a href="#contact" class="btn btn-outline">Contact Me</a>
-      </div>
-      <div class="scale-note">SCALE 1:100</div>
+    <div class="wrap hero-grid">
+
+            <div class="eyebrow">AI-Native Software Developer</div>
+
+            <h1 class="hero-name">Mosiah James</h1>
+
+            <h2 class="hero-tagline">
+                Building the Future with AI and Software
+            </h2>
+
+            <p class="role-line">
+                AI-native developer with a construction background —
+                I solve real-world problems through technology.
+            </p>
+
+            <div class="ctas">
+                <div class="ctas">
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+    <a href="#contact" class="btn btn-outline">Contact Me</a>
+</div>
+
+<div class="scale-note">SCALE 1:100</div>
+            </div>
+
+        <div class="hero-photo">
+            <img src="images/mosiah-james.jpg" alt="Mosiah James">
+        </div>
+
     </div>
-    <div class="blueprint-art">
-      <svg viewBox="0 0 400 400" width="100%" height="100%">
-        <g stroke="#3FA7D6" stroke-width="1.2" fill="none" opacity="0.9">
-          <rect x="60" y="120" width="200" height="200"/>
-          <rect x="60" y="80" width="120" height="40"/>
-          <line x1="60" y1="160" x2="260" y2="160"/>
-          <line x1="60" y1="220" x2="260" y2="220"/>
-          <line x1="120" y1="120" x2="120" y2="320"/>
-          <line x1="200" y1="120" x2="200" y2="320"/>
-          <path d="M60 120 L160 60 L260 120" />
-          <rect x="140" y="260" width="40" height="60"/>
-        </g>
-        <g stroke="#8CA0B8" stroke-width="0.6" fill="none">
-          <line x1="60" y1="345" x2="260" y2="345"/>
-          <line x1="60" y1="340" x2="60" y2="350"/>
-          <line x1="260" y1="340" x2="260" y2="350"/>
-        </g>
-        <text x="130" y="360" fill="#8CA0B8" font-family="JetBrains Mono" font-size="9">30'-0"</text>
-        <circle cx="230" cy="270" r="9" fill="none" stroke="#3FA7D6" stroke-width="1.2"/>
-        <circle cx="230" cy="285" r="14" fill="none" stroke="#3FA7D6" stroke-width="1.2"/>
-        <line x1="230" y1="299" x2="230" y2="330" stroke="#3FA7D6" stroke-width="1.2"/>
-      </svg>
-    </div>
-  </div>
 </section>
 
 <section class="about" id="about">
@@ -217,69 +227,80 @@
 
 <section class="skills" id="skills">
   <div class="wrap">
-    <div class="kicker">03 — Skills</div>
+    <div class="kicker" style="display:flex;justify-content:space-between;align-items:center;">03 — Skills</div>
     <div class="tabs">
       <div class="tab active" onclick="showTab('frontend', this)">Frontend</div>
       <div class="tab" onclick="showTab('aitools', this)">AI &amp; Tools</div>
       <div class="tab" onclick="showTab('soft', this)">Soft Skills</div>
     </div>
     <div class="skill-panel show" id="frontend">
-      <div class="skill-item">HTML</div>
-      <div class="skill-item">CSS</div>
-      <div class="skill-item">JavaScript</div>
-      <div class="skill-item">Responsive Design</div>
+      <div class="skill-item"><div class="badge" style="background:#E44D26;">5</div>HTML</div>
+      <div class="skill-item"><div class="badge" style="background:#2965F1;">3</div>CSS</div>
+      <div class="skill-item"><div class="badge" style="background:#F0DB4F;">JS</div>JavaScript</div>
+      <div class="skill-item"><div class="badge" style="background:var(--blue);">▦</div>Responsive Design</div>
     </div>
     <div class="skill-panel" id="aitools">
-      <div class="skill-item">Git</div>
-      <div class="skill-item">GitHub</div>
-      <div class="skill-item">VS Code</div>
-      <div class="skill-item">Prompt Engineering</div>
-      <div class="skill-item">AI-Assisted Dev</div>
+      <div class="skill-item"><div class="badge" style="background:#F05033;">◆</div>Git</div>
+      <div class="skill-item"><div class="badge" style="background:#F4F7FA;">●</div>GitHub</div>
+      <div class="skill-item"><div class="badge" style="background:#007ACC;">&lt;/&gt;</div>VS Code</div>
+      <div class="skill-item"><div class="badge" style="background:var(--blue);">✎</div>Prompt Engineering</div>
+      <div class="skill-item"><div class="badge" style="background:var(--blue);">✦</div>AI-Assisted Dev</div>
     </div>
     <div class="skill-panel" id="soft">
-      <div class="skill-item">Critical Thinking</div>
-      <div class="skill-item">Time Management</div>
-      <div class="skill-item">Communication</div>
-      <div class="skill-item">Adaptability</div>
+      <div class="skill-item"><div class="badge" style="background:var(--blue);">◈</div>Critical Thinking</div>
+      <div class="skill-item"><div class="badge" style="background:var(--blue);">⏱</div>Time Management</div>
+      <div class="skill-item"><div class="badge" style="background:var(--blue);">◐</div>Communication</div>
+      <div class="skill-item"><div class="badge" style="background:var(--blue);">◭</div>Adaptability</div>
     </div>
   </div>
 </section>
 
 <section class="projects" id="projects">
   <div class="wrap">
-    <div class="kicker">04 — Featured Projects</div>
-    <div class="proj-grid">
+<h2>Projects and Case Studies</h2>    <div class="proj-grid">
       <div class="card">
-        <div class="thumb">MJ</div>
+        <div class="thumb" style="background:linear-gradient(135deg,#0E1D33,#1C3352);">MJ</div>
         <div class="body">
           <h5>AI Portfolio Website</h5>
-          <p>Personal portfolio built with HTML, CSS, JavaScript, and AI-assisted workflows.</p>
-          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <p>Designed and developed a blueprint-inspired portfolio showcasing my transition from construction to AI-native software development.</p>          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
         </div>
       </div>
       <div class="card">
-        <div class="thumb">☀</div>
-        <div class="body">
-          <h5>Weather Dashboard</h5>
-          <p>Real-time weather app with search, forecasts, and responsive design.</p>
-          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span><span>API</span></div>
-        </div>
-      </div>
+  <div class="thumb" style="background:linear-gradient(135deg,#2C6FBB,#3FA7D6);">⇄</div>
+  <div class="body">
+    <h5>Unit Converter</h5>
+    <p>Built a responsive web application that converts kilometers to miles and miles to kilometers using JavaScript.</p>
+    <div class="tags">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+    </div>
+  </div>
+</div>
       <div class="card">
-        <div class="thumb">◧</div>
-        <div class="body">
-          <h5>AI Chat App</h5>
-          <p>Conversational AI interface with a modern UI and streaming responses.</p>
-          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
-        </div>
-      </div>
+  <div class="thumb" style="background:#0D1421;font-size:18px;">☕ AI</div>
+  <div class="body">
+    <h5>Coffee Shop AI Case Study</h5>
+    <p>Designed an AI-powered inventory forecasting solution that predicts customer demand using sales history, weather, holidays, and local events.</p>
+    <div class="tags">
+      <span>AI</span>
+      <span>LLMs</span>
+      <span>Problem Solving</span>
+    </div>
+  </div>
+</div>
       <div class="card">
-        <div class="thumb">◇</div>
-        <div class="body">
-          <h5>Future SaaS Project</h5>
-          <p>Top secret for now. Building something powerful with AI at the core.</p>
-          <div class="tags"><span>Coming Soon</span></div>
-        </div>
+  <div class="thumb" style="background:radial-gradient(circle,#1C3352,#0A1628);">Git</div>
+  <div class="body">
+    <h5>Git & GitHub Workflow</h5>
+    <p>Used Git and GitHub to manage projects with descriptive commits, version control, and an organized development workflow.</p>
+    <div class="tags">
+      <span>Git</span>
+      <span>GitHub</span>
+      <span>Version Control</span>
+    </div>
+  </div>
+</div>
       </div>
     </div>
   </div>
@@ -340,6 +361,7 @@ function showTab(id, el){
   el.classList.add('active');
 }
 </script>
+
 
 </body>
 </html>
