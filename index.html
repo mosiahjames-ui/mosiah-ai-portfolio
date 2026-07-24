@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mosiah James | AI-Native Developer Portfolio</title>
 <meta name="description" content="Mosiah James — AI-native software developer with a hands-on construction background.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="[https://fonts.googleapis.com">](https://fonts.googleapis.com">)
+<link href="[https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"](https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap") rel="stylesheet">
 <style>
   :root{
     --navy:#0A1628; --navy-2:#0E1D33; --line:#1C3352;
@@ -33,25 +33,20 @@
 
   /* HERO */
   .hero{padding:80px 0 60px;border-bottom:1px solid var(--line);}
-  .hero .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;}
-  @media(max-width:900px){.hero .grid{grid-template-columns:1fr;}}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;}}
   .eyebrow{font-family:'JetBrains Mono';font-size:11px;color:var(--blue);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
   .eyebrow::after{content:'';flex:1;height:1px;background:var(--line);max-width:120px;}
   h1{font-family:'Space Grotesk';font-weight:700;font-size:clamp(34px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;}
   .role-line{margin-top:22px;font-size:18px;color:var(--dim);}
-  .role-line b{color:var(--white);font-weight:600;}
   .ctas{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;}
   .btn{font-family:'JetBrains Mono';font-size:12px;letter-spacing:0.05em;text-transform:uppercase;padding:14px 24px;display:inline-flex;align-items:center;gap:8px;transition:opacity .2s;}
   .btn-primary{background:var(--blue);color:var(--navy);}
   .btn-outline{border:1px solid var(--line);color:var(--white);}
   .btn:hover{opacity:0.82;}
   .scale-note{margin-top:28px;font-family:'JetBrains Mono';font-size:10px;color:var(--dim);letter-spacing:0.08em;}
-
-  .blueprint-art{border:1px solid var(--line);background:
-    linear-gradient(var(--blue-dim) 1px, transparent 1px) 0 0/24px 24px,
-    linear-gradient(90deg, var(--blue-dim) 1px, transparent 1px) 0 0/24px 24px,
-    var(--navy-2);
-    padding:24px;aspect-ratio:1/1;}
+  .hero-photo{display:flex;justify-content:center;align-items:center;}
+  .hero-photo img{width:320px;max-width:100%;height:auto;border-radius:20px;object-fit:cover;border:2px solid var(--blue);}
 
   /* ABOUT */
   .about{padding:70px 0;border-bottom:1px solid var(--line);}
@@ -82,12 +77,10 @@
   .tabs{display:flex;gap:24px;border-bottom:1px solid var(--line);margin-bottom:28px;}
   .tab{font-family:'JetBrains Mono';font-size:12px;letter-spacing:0.05em;text-transform:uppercase;padding-bottom:14px;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;}
   .tab.active{color:var(--blue);border-color:var(--blue);}
-  .skill-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
-  @media(max-width:700px){.skill-grid{grid-template-columns:repeat(3,1fr);}}
   .skill-panel{display:none;}
   .skill-panel.show{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
   @media(max-width:700px){.skill-panel.show{grid-template-columns:repeat(3,1fr);}}
-  .skill-item{border:1px solid var(--line);padding:22px 10px;text-align:center;font-family:'Space Grotesk';font-size:12px;letter-spacing:0.01em;color:var(--white);display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .skill-item{border:1px solid var(--line);padding:22px 10px;text-align:center;font-family:'Space Grotesk';font-size:12px;color:var(--white);display:flex;flex-direction:column;align-items:center;gap:10px;}
   .skill-item .badge{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono';font-weight:700;font-size:14px;color:var(--navy);}
 
   /* PROJECTS */
@@ -124,19 +117,6 @@
   footer{border-top:1px solid var(--line);padding:24px 0;}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
   footer p{font-family:'JetBrains Mono';font-size:11px;color:var(--dim);}
-.hero-photo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-photo img {
-    width: 320px;
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    object-fit: cover;
-}
 </style>
 </head>
 <body>
@@ -162,43 +142,32 @@
     </nav>
   </div>
 </header>
+
 <section class="hero" id="home">
-    <div class="wrap hero-grid">
-
-            <div class="eyebrow">AI-Native Software Developer</div>
-
-            <h1 class="hero-name">Mosiah James</h1>
-
-            <h2 class="hero-tagline">
-                Building the Future with AI and Software
-            </h2>
-
-            <p class="role-line">
-                AI-native developer with a construction background —
-                I solve real-world problems through technology.
-            </p>
-
-            <div class="ctas">
-                <div class="ctas">
-    <a href="#projects" class="btn btn-primary">View Projects</a>
-    <a href="#contact" class="btn btn-outline">Contact Me</a>
-</div>
-
-<div class="scale-note">SCALE 1:100</div>
-            </div>
-
-        <div class="hero-photo">
-            <img src="images/mosiah-james.jpg" alt="Mosiah James">
-        </div>
-
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">AI-Native Software Developer</div>
+      <h1>Mosiah James</h1>
+      <h2 style="font-family:'Space Grotesk';font-size:clamp(20px,2.5vw,28px);font-weight:600;margin-top:12px;color:var(--blue);">Building the Future with AI and Software</h2>
+      <p class="role-line">AI-native developer with a construction background — I solve real-world problems through technology.</p>
+      <div class="ctas">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+      <div class="scale-note">SCALE 1:100</div>
     </div>
+    <div class="hero-photo">
+      <img src="images/mosiah-james.jpg" alt="Mosiah James">
+    </div>
+  </div>
 </section>
 
 <section class="about" id="about">
   <div class="wrap grid">
     <div>
       <div class="kicker">01 — About Me</div>
-      <h2>I've always been a builder.<br><em>I simply changed what I build.</em></h2>
+      <h2>I've always been a builder.<br><em>I simply changed what I build.</em>
+        </h2>
       <p>Before code, I framed houses. Now I architect solutions. My background in construction taught me discipline, precision, and how to solve real problems under pressure. Today, I use those same principles to build clean, scalable, AI-powered applications that make an impact.</p>
       <p>AI doesn't replace engineers. It amplifies builders. I build with intention. I ship with purpose.</p>
     </div>
@@ -227,7 +196,7 @@
 
 <section class="skills" id="skills">
   <div class="wrap">
-    <div class="kicker" style="display:flex;justify-content:space-between;align-items:center;">03 — Skills</div>
+    <div class="kicker">03 — Skills</div>
     <div class="tabs">
       <div class="tab active" onclick="showTab('frontend', this)">Frontend</div>
       <div class="tab" onclick="showTab('aitools', this)">AI &amp; Tools</div>
@@ -257,50 +226,51 @@
 
 <section class="projects" id="projects">
   <div class="wrap">
-<h2>Projects and Case Studies</h2>    <div class="proj-grid">
+    <h2 style="font-family:'Space Grotesk';font-size:28px;font-weight:600;margin-bottom:8px;">Projects and Case Studies</h2>
+    <div class="proj-grid">
       <div class="card">
         <div class="thumb" style="background:linear-gradient(135deg,#0E1D33,#1C3352);">MJ</div>
         <div class="body">
           <h5>AI Portfolio Website</h5>
-          <p>Designed and developed a blueprint-inspired portfolio showcasing my transition from construction to AI-native software development.</p>          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <p>Blueprint-inspired portfolio showcasing my transition from construction to AI-native development.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <div style="margin-top:12px;">
+            <a href="[https://github.com/mosiahjames-ui"](https://github.com/mosiahjames-ui") target="_blank" class="btn btn-outline" style="font-size:10px;padding:8px 14px;">View on GitHub</a>
+          </div>
         </div>
       </div>
       <div class="card">
-  <div class="thumb" style="background:linear-gradient(135deg,#2C6FBB,#3FA7D6);">⇄</div>
-  <div class="body">
-    <h5>Unit Converter</h5>
-    <p>Built a responsive web application that converts kilometers to miles and miles to kilometers using JavaScript.</p>
-    <div class="tags">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-    </div>
-  </div>
-</div>
+        <div class="thumb" style="background:linear-gradient(135deg,#2C6FBB,#3FA7D6);">⇄</div>
+        <div class="body">
+          <h5>Unit Converter</h5>
+          <p>Responsive app converting kilometers to miles using JavaScript.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div style="margin-top:12px;">
+            <a href="[https://github.com/mosiahjames-ui"](https://github.com/mosiahjames-ui") target="_blank" class="btn btn-outline" style="font-size:10px;padding:8px 14px;">View on GitHub</a>
+          </div>
+        </div>
+      </div>
       <div class="card">
-  <div class="thumb" style="background:#0D1421;font-size:18px;">☕ AI</div>
-  <div class="body">
-    <h5>Coffee Shop AI Case Study</h5>
-    <p>Designed an AI-powered inventory forecasting solution that predicts customer demand using sales history, weather, holidays, and local events.</p>
-    <div class="tags">
-      <span>AI</span>
-      <span>LLMs</span>
-      <span>Problem Solving</span>
-    </div>
-  </div>
-</div>
+        <div class="thumb" style="background:#0D1421;font-size:18px;">☕ AI</div>
+        <div class="body">
+          <h5>Coffee Shop AI Case Study</h5>
+          <p>AI-powered inventory forecasting using sales history, weather, and local events.</p>
+          <div class="tags"><span>AI</span><span>LLMs</span><span>Problem Solving</span></div>
+          <div style="margin-top:12px;">
+            <a href="[https://github.com/mosiahjames-ui"](https://github.com/mosiahjames-ui") target="_blank" class="btn btn-outline" style="font-size:10px;padding:8px 14px;">View on GitHub</a>
+          </div>
+        </div>
+      </div>
       <div class="card">
-  <div class="thumb" style="background:radial-gradient(circle,#1C3352,#0A1628);">Git</div>
-  <div class="body">
-    <h5>Git & GitHub Workflow</h5>
-    <p>Used Git and GitHub to manage projects with descriptive commits, version control, and an organized development workflow.</p>
-    <div class="tags">
-      <span>Git</span>
-      <span>GitHub</span>
-      <span>Version Control</span>
-    </div>
-  </div>
-</div>
+        <div class="thumb" style="background:radial-gradient(circle,#1C3352,#0A1628);">Git</div>
+        <div class="body">
+          <h5>Git & GitHub Workflow</h5>
+          <p>Version control workflow with descriptive commits and organized development.</p>
+          <div class="tags"><span>Git</span><span>GitHub</span><span>Version Control</span></div>
+          <div style="margin-top:12px;">
+            <a href="[https://github.com/mosiahjames-ui"](https://github.com/mosiahjames-ui") target="_blank" class="btn btn-outline" style="font-size:10px;padding:8px 14px;">View on GitHub</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -327,11 +297,11 @@
         <div class="ico">@</div>
         <div><h6>Email</h6><p>mosiah.james@pursuit.org</p></div>
       </a>
-      <a class="contact-item" href="https://github.com/mosiahjames-ui" target="_blank" rel="noopener">
+      <a class="contact-item" href="[https://github.com/mosiahjames-ui"](https://github.com/mosiahjames-ui") target="_blank" rel="noopener">
         <div class="ico">&lt;/&gt;</div>
         <div><h6>GitHub</h6><p>github.com/mosiahjames-ui</p></div>
       </a>
-      <a class="contact-item" href="https://www.linkedin.com/in/mosiah-james-16b653421" target="_blank" rel="noopener">
+      <a class="contact-item" href="[https://www.linkedin.com/in/mosiah-james-16b653421"](https://www.linkedin.com/in/mosiah-james-16b653421") target="_blank" rel="noopener">
         <div class="ico">in</div>
         <div><h6>LinkedIn</h6><p>linkedin.com/in/mosiah-james</p></div>
       </a>
@@ -361,7 +331,5 @@ function showTab(id, el){
   el.classList.add('active');
 }
 </script>
-
-
 </body>
 </html>
